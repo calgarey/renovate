@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`config/validation validateConfig(config) errors for all types 1`] = `
+Array [
+  Object {
+    "depName": "Configuration Error",
+    "message": "Invalid semver range for allowedVersions: \`foo\`",
+  },
+  Object {
+    "depName": "Configuration Error",
+    "message": "Configuration option \`enabled\` should be boolean. Found: 1 (number)",
+  },
+  Object {
+    "depName": "Configuration Error",
+    "message": "Invalid schedule: \`Schedule \\"every 15 mins every weekday\\" should not specify minutes\`",
+  },
+  Object {
+    "depName": "Configuration Error",
+    "message": "Configuration option \`labels\` should be a list (Array)",
+  },
+  Object {
+    "depName": "Configuration Error",
+    "message": "Configuration option \`semanticCommitType\` should be a string",
+  },
+  Object {
+    "depName": "Configuration Error",
+    "message": "Configuration option \`lockFileMaintenance\` should be a json object",
+  },
+  Object {
+    "depName": "Configuration Error",
+    "message": "Invalid configuration option: \`foo\`",
+  },
+]
+`;
+
+exports[`config/validation validateConfig(config) returns nested errors 1`] = `
+Array [
+  Object {
+    "depName": "Configuration Error",
+    "message": "Invalid configuration option: \`foo\`",
+  },
+  Object {
+    "depName": "Configuration Error",
+    "message": "Invalid configuration option: \`bar\`",
+  },
+]
+`;

@@ -1,0 +1,912 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`platform/github addAssignees(issueNo, assignees) should add the given assignees to the issue 1`] = `
+Array [
+  Array [
+    "repos/some/repo/issues/42/assignees",
+    Object {
+      "body": Object {
+        "assignees": Array [
+          "someuser",
+          "someotheruser",
+        ],
+      },
+    },
+  ],
+]
+`;
+
+exports[`platform/github addReviewers(issueNo, reviewers) should add the given reviewers to the PR 1`] = `
+Array [
+  Array [
+    "repos/some/repo/pulls/42/requested_reviewers",
+    Object {
+      "body": Object {
+        "reviewers": Array [
+          "someuser",
+          "someotheruser",
+        ],
+      },
+    },
+  ],
+]
+`;
+
+exports[`platform/github commitFilesToBranch(branchName, files, message, parentBranch) should add a commit to a new branch if the branch does not already exist 1`] = `
+Array [
+  Array [
+    "repos/some/repo",
+  ],
+  Array [
+    "repos/some/repo/pulls?per_page=100&state=all",
+    Object {
+      "paginate": true,
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees/master?recursive=true",
+  ],
+  Array [
+    "repos/some/repo/git/refs/heads/master",
+  ],
+  Array [
+    "repos/some/repo/git/commits/1111",
+  ],
+  Array [
+    "repos/some/repo/branches?per_page=100",
+    Object {
+      "paginate": true,
+    },
+  ],
+]
+`;
+
+exports[`platform/github commitFilesToBranch(branchName, files, message, parentBranch) should add a commit to a new branch if the branch does not already exist 2`] = `
+Array [
+  Array [
+    "repos/some/repo/git/blobs",
+    Object {
+      "body": Object {
+        "content": "aGVsbG8gd29ybGQ=",
+        "encoding": "base64",
+      },
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees",
+    Object {
+      "body": Object {
+        "base_tree": "2222",
+        "tree": Array [
+          Object {
+            "mode": "100644",
+            "path": "package.json",
+            "sha": "3333",
+            "type": "blob",
+          },
+        ],
+      },
+    },
+  ],
+  Array [
+    "repos/some/repo/git/commits",
+    Object {
+      "body": Object {
+        "message": "my other commit message",
+        "parents": Array [
+          "1111",
+        ],
+        "tree": "4444",
+      },
+    },
+  ],
+  Array [
+    "repos/some/repo/git/refs",
+    Object {
+      "body": Object {
+        "ref": "refs/heads/the-branch",
+        "sha": "5555",
+      },
+    },
+  ],
+]
+`;
+
+exports[`platform/github commitFilesToBranch(branchName, files, message, parentBranch) should add a commit to a new branch if the branch does not already exist 3`] = `Array []`;
+
+exports[`platform/github commitFilesToBranch(branchName, files, message, parentBranch) should add a new commit to the branch 1`] = `
+Array [
+  Array [
+    "repos/some/repo",
+  ],
+  Array [
+    "repos/some/repo/pulls?per_page=100&state=all",
+    Object {
+      "paginate": true,
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees/master?recursive=true",
+  ],
+  Array [
+    "repos/some/repo/git/refs/heads/master",
+  ],
+  Array [
+    "repos/some/repo/git/commits/1111",
+  ],
+  Array [
+    "repos/some/repo/branches?per_page=100",
+    Object {
+      "paginate": true,
+    },
+  ],
+]
+`;
+
+exports[`platform/github commitFilesToBranch(branchName, files, message, parentBranch) should add a new commit to the branch 2`] = `
+Array [
+  Array [
+    "repos/some/repo/git/blobs",
+    Object {
+      "body": Object {
+        "content": "aGVsbG8gd29ybGQ=",
+        "encoding": "base64",
+      },
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees",
+    Object {
+      "body": Object {
+        "base_tree": "2222",
+        "tree": Array [
+          Object {
+            "mode": "100644",
+            "path": "package.json",
+            "sha": "3333",
+            "type": "blob",
+          },
+        ],
+      },
+    },
+  ],
+  Array [
+    "repos/some/repo/git/commits",
+    Object {
+      "body": Object {
+        "message": "my commit message",
+        "parents": Array [
+          "1111",
+        ],
+        "tree": "4444",
+      },
+    },
+  ],
+]
+`;
+
+exports[`platform/github commitFilesToBranch(branchName, files, message, parentBranch) should add a new commit to the branch 3`] = `
+Array [
+  Array [
+    "repos/some/repo/git/refs/heads/the-branch",
+    Object {
+      "body": Object {
+        "force": true,
+        "sha": "5555",
+      },
+    },
+  ],
+]
+`;
+
+exports[`platform/github createPr() should create and return a PR object 1`] = `
+Object {
+  "branchName": "some-branch",
+  "displayNumber": "Pull Request #123",
+  "number": 123,
+}
+`;
+
+exports[`platform/github createPr() should create and return a PR object 2`] = `
+Array [
+  Array [
+    "repos/some/repo/pulls",
+    Object {
+      "body": Object {
+        "base": "master",
+        "body": "Hello world",
+        "head": "some:some-branch",
+        "title": "The Title",
+      },
+    },
+  ],
+  Array [
+    "repos/some/repo/issues/123/labels",
+    Object {
+      "body": Array [
+        "deps",
+        "renovate",
+      ],
+    },
+  ],
+  Array [
+    "repos/some/repo/statuses/some-sha",
+    Object {
+      "body": Object {
+        "context": "renovate/verify",
+        "description": "Renovate verified pull request",
+        "state": "success",
+        "target_url": "https://renovateapp.com",
+      },
+    },
+  ],
+]
+`;
+
+exports[`platform/github createPr() should use defaultBranch 1`] = `
+Object {
+  "branchName": "some-branch",
+  "displayNumber": "Pull Request #123",
+  "number": 123,
+}
+`;
+
+exports[`platform/github createPr() should use defaultBranch 2`] = `
+Array [
+  Array [
+    "repos/some/repo/pulls",
+    Object {
+      "body": Object {
+        "base": "master",
+        "body": "Hello world",
+        "head": "some:some-branch",
+        "title": "The Title",
+      },
+    },
+  ],
+]
+`;
+
+exports[`platform/github ensureComment add comment if not found 1`] = `
+Array [
+  Array [
+    "repos/some/repo/issues/42/comments",
+    Object {
+      "body": Object {
+        "body": "### some-subject
+
+some
+content",
+      },
+    },
+  ],
+]
+`;
+
+exports[`platform/github ensureComment add updates comment if necessary 1`] = `
+Array [
+  Array [
+    "repos/some/repo/issues/comments/1234",
+    Object {
+      "body": Object {
+        "body": "### some-subject
+
+some
+content",
+      },
+    },
+  ],
+]
+`;
+
+exports[`platform/github getAllRenovateBranches() should return all renovate branches 1`] = `
+Array [
+  "renovate/a",
+  "renovate/b",
+]
+`;
+
+exports[`platform/github getBranchLastCommitTime should return a Date 1`] = `2011-04-14T16:00:49.000Z`;
+
+exports[`platform/github getBranchPr(branchName) should return the PR object 1`] = `
+Array [
+  Array [
+    "repos/some/repo",
+  ],
+  Array [
+    "repos/some/repo/pulls?per_page=100&state=all",
+    Object {
+      "paginate": true,
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees/master?recursive=true",
+  ],
+]
+`;
+
+exports[`platform/github getBranchPr(branchName) should return the PR object 2`] = `null`;
+
+exports[`platform/github getCommitMessages() returns commits messages 1`] = `
+Array [
+  "foo",
+  "bar",
+]
+`;
+
+exports[`platform/github getFile() should return large file via git API 1`] = `
+Array [
+  Array [
+    "repos/some/repo",
+  ],
+  Array [
+    "repos/some/repo/pulls?per_page=100&state=all",
+    Object {
+      "paginate": true,
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees/master?recursive=true",
+  ],
+  Array [
+    "repos/some/repo/contents/backend/package-lock.json?ref=master",
+  ],
+  Array [
+    "repos/some/repo/git/trees/master.backend",
+  ],
+  Array [
+    "repos/some/repo/git/blobs/some-sha",
+  ],
+]
+`;
+
+exports[`platform/github getFile() should return large file via git API 2`] = `"{\\"hello\\":\\"workd\\"}"`;
+
+exports[`platform/github getFile() should return null if GitHub returns a 404 1`] = `
+Array [
+  Array [
+    "repos/some/repo",
+  ],
+  Array [
+    "repos/some/repo/pulls?per_page=100&state=all",
+    Object {
+      "paginate": true,
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees/master?recursive=true",
+  ],
+  Array [
+    "repos/some/repo/contents/package.json?ref=master",
+  ],
+]
+`;
+
+exports[`platform/github getFile() should return null if getFile returns nothing 1`] = `
+Array [
+  Array [
+    "repos/some/repo",
+  ],
+  Array [
+    "repos/some/repo/pulls?per_page=100&state=all",
+    Object {
+      "paginate": true,
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees/master?recursive=true",
+  ],
+  Array [
+    "repos/some/repo/contents/package.json?ref=master",
+  ],
+]
+`;
+
+exports[`platform/github getFile() should return the encoded file content 1`] = `
+Array [
+  Array [
+    "repos/some/repo",
+  ],
+  Array [
+    "repos/some/repo/pulls?per_page=100&state=all",
+    Object {
+      "paginate": true,
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees/master?recursive=true",
+  ],
+  Array [
+    "repos/some/repo/contents/package.json?ref=master",
+  ],
+]
+`;
+
+exports[`platform/github getFileList should return the files matching the fileName 1`] = `
+Array [
+  "package.json",
+  "some-dir/package.json.some-thing-else",
+  "src/app/package.json",
+  "src/otherapp/package.json",
+]
+`;
+
+exports[`platform/github getPr(prNo) should return a PR object - 0 1`] = `
+Object {
+  "base": Object {
+    "sha": "1234",
+  },
+  "displayNumber": "Pull Request #1",
+  "mergeable": true,
+  "number": 1,
+  "state": "closed",
+}
+`;
+
+exports[`platform/github getPr(prNo) should return a PR object - 1 1`] = `
+Object {
+  "base": Object {
+    "sha": "1234",
+  },
+  "branchName": undefined,
+  "canRebase": true,
+  "commits": 1,
+  "displayNumber": "Pull Request #1",
+  "isUnmergeable": true,
+  "mergeable_state": "dirty",
+  "number": 1,
+  "state": "open",
+}
+`;
+
+exports[`platform/github getPr(prNo) should return a PR object - 2 1`] = `
+Object {
+  "base": Object {
+    "sha": "5678",
+  },
+  "branchName": undefined,
+  "canMerge": true,
+  "canRebase": true,
+  "commits": 1,
+  "displayNumber": "Pull Request #1",
+  "isStale": true,
+  "mergeable": true,
+  "number": 1,
+  "state": "open",
+}
+`;
+
+exports[`platform/github getPr(prNo) should return a rebaseable PR despite multiple commits 1`] = `
+Object {
+  "base": Object {
+    "sha": "1234",
+  },
+  "branchName": undefined,
+  "canRebase": true,
+  "commits": 2,
+  "displayNumber": "Pull Request #1",
+  "isUnmergeable": true,
+  "mergeable_state": "dirty",
+  "number": 1,
+  "state": "open",
+}
+`;
+
+exports[`platform/github getPr(prNo) should return a rebaseable PR if web-flow is second author 1`] = `
+Object {
+  "base": Object {
+    "sha": "1234",
+  },
+  "branchName": undefined,
+  "canRebase": true,
+  "commits": 2,
+  "displayNumber": "Pull Request #1",
+  "isUnmergeable": true,
+  "mergeable_state": "dirty",
+  "number": 1,
+  "state": "open",
+}
+`;
+
+exports[`platform/github getPr(prNo) should return an unrebaseable PR if multiple authors 1`] = `
+Object {
+  "base": Object {
+    "sha": "1234",
+  },
+  "branchName": undefined,
+  "commits": 2,
+  "displayNumber": "Pull Request #1",
+  "isUnmergeable": true,
+  "mergeable_state": "dirty",
+  "number": 1,
+  "state": "open",
+}
+`;
+
+exports[`platform/github getPrFiles() returns files 1`] = `
+Array [
+  "renovate.json",
+  "not renovate.json",
+]
+`;
+
+exports[`platform/github getRepos should return an array of repos 1`] = `
+Array [
+  Array [
+    "user/repos",
+    Object {
+      "paginate": true,
+    },
+  ],
+]
+`;
+
+exports[`platform/github getRepos should return an array of repos 2`] = `
+Array [
+  "a/b",
+  "c/d",
+]
+`;
+
+exports[`platform/github getRepos should support a custom endpoint 1`] = `
+Array [
+  Array [
+    "user/repos",
+    Object {
+      "paginate": true,
+    },
+  ],
+]
+`;
+
+exports[`platform/github getRepos should support a custom endpoint 2`] = `
+Array [
+  "a/b",
+  "c/d",
+]
+`;
+
+exports[`platform/github initRepo should forks when forkMode 1`] = `
+Object {
+  "isFork": false,
+  "privateRepo": false,
+}
+`;
+
+exports[`platform/github initRepo should initialise the config for the repo - 0 1`] = `
+Array [
+  Array [
+    "repos/some/repo",
+  ],
+  Array [
+    "repos/some/repo/pulls?per_page=100&state=all",
+    Object {
+      "paginate": true,
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees/master?recursive=true",
+  ],
+]
+`;
+
+exports[`platform/github initRepo should initialise the config for the repo - 0 2`] = `
+Object {
+  "isFork": false,
+  "privateRepo": false,
+}
+`;
+
+exports[`platform/github initRepo should initialise the config for the repo - 1 1`] = `
+Array [
+  Array [
+    "repos/some/repo",
+  ],
+  Array [
+    "repos/some/repo/pulls?per_page=100&state=all",
+    Object {
+      "paginate": true,
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees/master?recursive=true",
+  ],
+]
+`;
+
+exports[`platform/github initRepo should initialise the config for the repo - 1 2`] = `
+Object {
+  "isFork": false,
+  "privateRepo": false,
+}
+`;
+
+exports[`platform/github initRepo should initialise the config for the repo - 2 1`] = `
+Array [
+  Array [
+    "repos/some/repo",
+  ],
+  Array [
+    "repos/some/repo/pulls?per_page=100&state=all",
+    Object {
+      "paginate": true,
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees/master?recursive=true",
+  ],
+]
+`;
+
+exports[`platform/github initRepo should initialise the config for the repo - 2 2`] = `
+Object {
+  "isFork": false,
+  "privateRepo": false,
+}
+`;
+
+exports[`platform/github initRepo should merge 1`] = `
+Object {
+  "isFork": false,
+  "privateRepo": false,
+}
+`;
+
+exports[`platform/github initRepo should not guess at merge 1`] = `
+Object {
+  "isFork": false,
+  "privateRepo": false,
+}
+`;
+
+exports[`platform/github initRepo should rebase 1`] = `
+Object {
+  "isFork": false,
+  "privateRepo": false,
+}
+`;
+
+exports[`platform/github initRepo should squash 1`] = `
+Object {
+  "isFork": false,
+  "privateRepo": false,
+}
+`;
+
+exports[`platform/github initRepo should update fork when forkMode 1`] = `
+Object {
+  "isFork": false,
+  "privateRepo": false,
+}
+`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should perform a branch-merge-commit merge 1`] = `
+Array [
+  Array [
+    "repos/some/repo",
+  ],
+  Array [
+    "repos/some/repo/pulls?per_page=100&state=all",
+    Object {
+      "paginate": true,
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees/master?recursive=true",
+  ],
+]
+`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should perform a branch-merge-commit merge 2`] = `Array []`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should perform a branch-merge-commit merge 3`] = `
+Array [
+  Array [
+    "repos/some/repo/merges",
+    Object {
+      "body": Object {
+        "base": "master",
+        "head": "thebranchname",
+      },
+    },
+  ],
+]
+`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should perform a branch-merge-commit merge 4`] = `Array []`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should perform a branch-merge-commit merge 5`] = `
+Array [
+  Array [
+    "repos/some/repo/git/refs/heads/thebranchname",
+    undefined,
+  ],
+]
+`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should perform a branch-push merge 1`] = `
+Array [
+  Array [
+    "repos/some/repo",
+  ],
+  Array [
+    "repos/some/repo/pulls?per_page=100&state=all",
+    Object {
+      "paginate": true,
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees/master?recursive=true",
+  ],
+  Array [
+    "repos/some/repo/git/refs/heads/thebranchname",
+  ],
+]
+`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should perform a branch-push merge 2`] = `
+Array [
+  Array [
+    "repos/some/repo/git/refs/heads/master",
+    Object {
+      "body": Object {
+        "sha": "1235",
+      },
+    },
+  ],
+]
+`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should perform a branch-push merge 3`] = `Array []`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should perform a branch-push merge 4`] = `Array []`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should perform a branch-push merge 5`] = `
+Array [
+  Array [
+    "repos/some/repo/git/refs/heads/thebranchname",
+    undefined,
+  ],
+]
+`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if branch-merge-commit throws 1`] = `[Error: branch-merge-commit failed]`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if branch-merge-commit throws 2`] = `
+Array [
+  Array [
+    "repos/some/repo",
+  ],
+  Array [
+    "repos/some/repo/pulls?per_page=100&state=all",
+    Object {
+      "paginate": true,
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees/master?recursive=true",
+  ],
+]
+`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if branch-merge-commit throws 3`] = `Array []`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if branch-merge-commit throws 4`] = `
+Array [
+  Array [
+    "repos/some/repo/merges",
+    Object {
+      "body": Object {
+        "base": "master",
+        "head": "thebranchname",
+      },
+    },
+  ],
+]
+`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if branch-merge-commit throws 5`] = `Array []`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if branch-merge-commit throws 6`] = `Array []`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if branch-push merge throws 1`] = `[Error: branch-push failed]`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if branch-push merge throws 2`] = `
+Array [
+  Array [
+    "repos/some/repo",
+  ],
+  Array [
+    "repos/some/repo/pulls?per_page=100&state=all",
+    Object {
+      "paginate": true,
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees/master?recursive=true",
+  ],
+  Array [
+    "repos/some/repo/git/refs/heads/thebranchname",
+  ],
+]
+`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if branch-push merge throws 3`] = `
+Array [
+  Array [
+    "repos/some/repo/git/refs/heads/master",
+    Object {
+      "body": Object {
+        "sha": "1235",
+      },
+    },
+  ],
+]
+`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if branch-push merge throws 4`] = `Array []`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if branch-push merge throws 5`] = `Array []`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if branch-push merge throws 6`] = `Array []`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if unknown merge type 1`] = `[Error: Unsupported branch merge type: wrong-merge-type]`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if unknown merge type 2`] = `
+Array [
+  Array [
+    "repos/some/repo",
+  ],
+  Array [
+    "repos/some/repo/pulls?per_page=100&state=all",
+    Object {
+      "paginate": true,
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees/master?recursive=true",
+  ],
+]
+`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if unknown merge type 3`] = `Array []`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if unknown merge type 4`] = `Array []`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if unknown merge type 5`] = `Array []`;
+
+exports[`platform/github mergeBranch(branchName, mergeType) should throw if unknown merge type 6`] = `Array []`;
+
+exports[`platform/github setBaseBranch(branchName) sets the base branch 1`] = `
+Array [
+  Array [
+    "repos/some/repo",
+  ],
+  Array [
+    "repos/some/repo/pulls?per_page=100&state=all",
+    Object {
+      "paginate": true,
+    },
+  ],
+  Array [
+    "repos/some/repo/git/trees/master?recursive=true",
+  ],
+  Array [
+    "repos/some/repo/git/trees/some-branch?recursive=true",
+  ],
+]
+`;
+
+exports[`platform/github updatePr(prNo, title, body) should update the PR 1`] = `
+Array [
+  Array [
+    "repos/some/repo/pulls/1234",
+    Object {
+      "body": Object {
+        "body": "Hello world again",
+        "title": "The New Title",
+      },
+    },
+  ],
+]
+`;
